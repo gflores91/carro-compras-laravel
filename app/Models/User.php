@@ -1,6 +1,6 @@
 <?php
 
-namespace CCLV;
+namespace CCLV\Models;
 
 use Illuminate\Notifications\Notifiable;
 use Illuminate\Contracts\Auth\MustVerifyEmail;
@@ -16,7 +16,11 @@ class User extends Authenticatable
      * @var array
      */
     protected $fillable = [
-        'name', 'email', 'password',
+        'name', 
+        'email', 
+        'password', 
+        'nickname', 
+        'avatar'
     ];
 
     /**
@@ -27,4 +31,14 @@ class User extends Authenticatable
     protected $hidden = [
         'password', 'remember_token',
     ];
+
+    public function orders()
+    {
+        return $this->hasMany('CCLV\Models\Order');
+    }
+
+    public function socialproviders()
+    {
+        return $this->hasMany(SocialProvider::class);
+    }
 }

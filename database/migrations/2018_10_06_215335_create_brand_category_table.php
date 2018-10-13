@@ -15,7 +15,7 @@ class CreateBrandCategoryTable extends Migration
     {
         Schema::create('brand_category', function (Blueprint $table) {
             $table->increments('id');
-            $table->integer('categories_id');
+            $table->integer('category_id');
             $table->integer('brand_id');
             $table->timestamps();
         });
