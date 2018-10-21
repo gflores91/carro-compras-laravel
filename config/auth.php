@@ -67,7 +67,7 @@ return [
     'providers' => [
         'users' => [
             'driver' => 'eloquent',
-            'model' => CCLV\User::class,
+            'model' => CCLV\Models\User::class,
         ],
 
         // 'users' => [

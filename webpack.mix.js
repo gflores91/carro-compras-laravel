@@ -42,7 +42,7 @@ mix.sass('resources/assets/sass/app.scss', 'public/css')
     .copy(
     [
         'node_modules/font-awesome/fonts/',
-        'node_modules/bootstrap-sass/assets/fonts/'
+        'node_modules/bootstrap-sass/assets/fonts/bootstrap'
     ],
     'public/fonts/')
     .copy(

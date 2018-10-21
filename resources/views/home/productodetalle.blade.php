@@ -9,7 +9,7 @@
 		<div class="container">
 			<div class="row">
 				@include('partials.leftsidebar')
-				
+
 				<div class="col-sm-9 padding-right">
 					<div class="product-details">{{--Producto--}}
 						<div class="col-sm-5">
@@ -27,7 +27,7 @@
 													<a href=""><img src="{{$imagen->rutaimagen}}" alt="" class="img-responsive" style="height:84px;width:71px"></a>
 												@endforeach
 											</div>
-										@endforeach										
+										@endforeach
 									</div>
 								  {{--Controles--}}
 								  <a class="left item-control" href="#similar-product" data-slide="prev">
@@ -46,7 +46,7 @@
 										<h4><span class="label label-success newarrival">{{$producto->condicion}}</span></h4>
 									@endif
 								@endif
-								
+
 								@if($producto->oferta)
 									<h4><span class="label label-info newarrival">En oferta</span></h4>
 								@endif
@@ -55,16 +55,16 @@
 								<p>Web ID: {{$producto->id}}</p>
 								<img src="images/product-details/rating.png" alt="" />
 								<span>
-									<span>CLP ${{$producto->precio}}</span>
-									{!!Form::open(['route'=>'product.postanadiralcarro','method'=>'POST'])!!}
-									{!!Form::hidden('id',$producto->id)!!}
-									{!!Form::label('Cantidad:')!!}
-									{!!Form::text('cantidad',1)!!}
-									{!!Form::button('<i class="fa fa-shopping-cart"></i> Añadir al carro',[
-										'class' => 'btn btn-default cart',
-										'type' => 'submit'
-									])!!}
-									{!!Form::close()!!}
+                                    <span>CLP ${{$producto->precio}}</span>
+                                    <form action="{{ route('product.postanadiralcarro') }}" method="post">
+                                        {{ csrf_field() }}
+                                        <input type="hidden" name="id" value="{{ $producto->id }}">
+                                        <label for="cantidad">Cantidad</label>
+                                        <input type="text" name="cantidad" id="cantidad" value="1">
+                                        <button type="submit" class="btn btn-default cart">
+                                            <i class="fa fa-shopping-cart"></i> Añadir al carro
+                                        </button>
+                                    </form>
 								</span>
 								@if($producto->condicion === 'Sin stock')
 									<p><b>Disponibilidad:</b> Sin Stock</p>
@@ -81,7 +81,7 @@
 							</div>{{--./Informacion Producto--}}
 						</div>
 					</div>{{--./Producto--}}
-					
+
 					<div class="category-tab shop-details-tab">{{--Pestañas inferiores--}}
 						<div class="col-sm-12">
 							<ul class="nav nav-tabs">
@@ -94,36 +94,11 @@
 								<div class="col-sm-11">
 									<p>{{$producto->descripcion}}</p>
 								</div>
-								
+
 							</div>
-							{{--
-							<div class="tab-pane fade active in" id="reviews" >
-								<div class="col-sm-12">
-									<ul>
-										<li><a href=""><i class="fa fa-user"></i>EUGEN</a></li>
-										<li><a href=""><i class="fa fa-clock-o"></i>12:41 PM</a></li>
-										<li><a href=""><i class="fa fa-calendar-o"></i>31 DEC 2014</a></li>
-									</ul>
-									<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.</p>
-									<p><b>Write Your Review</b></p>
-									
-									<form action="#">
-										<span>
-											<input type="text" placeholder="Your Name"/>
-											<input type="email" placeholder="Email Address"/>
-										</span>
-										<textarea name="" ></textarea>
-										<b>Rating: </b> <img src="images/product-details/rating.png" alt="" />
-										<button type="button" class="btn btn-default pull-right">
-											Submit
-										</button>
-									</form>
-								</div>
-							</div>
-							--}}
 						</div>
 					</div>{{--./Pestañas inferiores--}}
-					
+
 				</div>
 			</div>
 		</div>

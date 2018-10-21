@@ -9,27 +9,16 @@
     <link href="{{ mix('css/main.css') }}" rel="stylesheet">
     <link href="{{ mix('css/eshopper.css') }}" rel="stylesheet">
     <link href="{{ mix('css/main.css') }}" rel="stylesheet">
-    <!--[if lt IE 9]>
-        <script src="js/html5shiv.js"></script>
-        <script src="js/respond.js"></script>
-    <![endif]-->    
-    {{--   
-    <link rel="shortcut icon" href="{{ mix('images/ico/favicon.ico') }}">
-    <link rel="apple-touch-icon-precomposed" sizes="144x144" href="{{ mix('images/ico/apple-touch-icon-144-precomposed.png') }}">
-    <link rel="apple-touch-icon-precomposed" sizes="114x114" href="{{ mix('images/ico/apple-touch-icon-114-precomposed.png') }}">
-    <link rel="apple-touch-icon-precomposed" sizes="72x72" href="{{ mix('images/ico/apple-touch-icon-72-precomposed.png') }}">
-    <link rel="apple-touch-icon-precomposed" href="{{ mix('images/ico/apple-touch-icon-57-precomposed.png') }}">
-    --}}
     @yield('styles')
 </head>
 <body>
 
     @include('partials.header')
-    
+
     @yield('slider')
 
-    @yield('content')        
-   
+    @yield('content')
+
     @include('partials.footer')
 
     <script src="{{mix('js/main.js')}}"></script>
@@ -61,7 +50,7 @@
             case 'info':
                 toastr.info("{{ Session::get('message') }}");
                 break;
-            
+
             case 'warning':
                 toastr.warning("{{ Session::get('message') }}");
                 break;
@@ -82,7 +71,7 @@
                      "@endforeach");
     @endif{{--./Mensaje error--}}
     </script>
-    
+
     @yield('scripts')
 </body>
 </html>

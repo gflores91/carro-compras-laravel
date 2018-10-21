@@ -6,19 +6,25 @@
     <meta name="description" content="">
     <meta name="author" content="">
     <title>shcart | @yield('title')</title>
-    @include('partials.styles')
+    <link href="{{ mix('css/main.css') }}" rel="stylesheet">
+    <link href="{{ mix('css/eshopper.css') }}" rel="stylesheet">
+    <link href="{{ mix('css/main.css') }}" rel="stylesheet">
+    <!--[if lt IE 9]>
+        <script src="js/html5shiv.js"></script>
+        <script src="js/respond.js"></script>
+    <![endif]-->
     @yield('styles')
 </head>
 <body>
 
     @include('partials.header')
-    
+
     @yield('slider')
 
-    @yield('content')        
-   
+    @yield('content')
+
     @include('partials.footer')
-    
+
     <script src="{{asset('js/appgeneral.min.js')}}"></script>
     <script src="{{asset('js/eshopper.min.js')}}"></script>
     <script src="{{asset('js/custom.min.js')}}"></script>

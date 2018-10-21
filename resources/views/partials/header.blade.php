@@ -2,15 +2,15 @@
     <div class="header_top">{{-- Header superior --}}
         <div class="container">
             <div class="row">
-                <div class="col-sm-6">
+                <div class="col-sm-8">
                     <div class="contactinfo">
                         <ul class="nav nav-pills">
-                            <li><a href="tel:+569 82715733"><i class="fa fa-phone"></i> +569 82715733</a></li>
-                            <li><a href="mailto:empleo@gabrielflores.cl"><i class="fa fa-envelope"></i> empleo@gabrielflores.cl</a></li>
+                            <li style="margin-left:4px;"><a href="tel:+569 82715733"><i class="fa fa-phone"></i> +569 82715733</a></li>
+                            <li><a href="mailto:gabrielfloresmonsalve@gmail.com"><i class="fa fa-envelope"></i> gabrielfloresmonsalve@gmail.com</a></li>
                         </ul>
                     </div>
                 </div>
-                <div class="col-sm-6">
+                <div class="col-sm-4">
                     <div class="social-icons pull-right">
                         <ul class="nav navbar-nav">
                             <li><a href="https://twitter.com/gfloresm91"><i class="fa fa-twitter"></i></a></li>
@@ -22,7 +22,7 @@
             </div>
         </div>
     </div>{{-- ./Header superior --}}
-    
+
     <div class="header-middle">{{-- Header medio --}}
         <div class="container">
             <div class="row">
@@ -46,11 +46,11 @@
                 <div class="col-sm-12 col-md-7 col-lg-7">
                     <div class="shop-menu pull-right">
                         <ul class="nav navbar-nav">
-                            
+
                             <li><a href="#"><i class="fa fa-star"></i> Lista de deseos</a></li>
                             <li>
                                 <a href="{{route('product.carro')}}">
-                                    <i class="fa fa-shopping-cart"></i> 
+                                    <i class="fa fa-shopping-cart"></i>
                                     Carro <span class="badge">
                                         {{Session::has('cart') ? Session::get('cart')->totalCantidad : '0'}}
                                     </span>
@@ -82,7 +82,7 @@
                                                 </div>
                                             </div>
                                         </li>
-                                       
+
                                         <li class=" usermenu">
                                             <div class="row">
                                                 <div class="col-lg-12">
@@ -109,7 +109,7 @@
                                     </ul>
                                 </li>
 
-                               
+
                             @else
                                 <li><a href="{{ route('user.login') }}"><i class="fa fa-lock"></i> Iniciar sesión</a></li>
                             @endif
@@ -140,18 +140,18 @@
                             <li class="dropdown"><a href="#">Shop<i class="fa fa-angle-down"></i></a>
                                 <ul role="menu" class="sub-menu">
                                     <li><a href="shop.html">Products</a></li>
-                                    <li><a href="product-details.html">Product Details</a></li> 
-                                    <li><a href="checkout.html">Checkout</a></li> 
-                                    <li><a href="cart.html">Cart</a></li> 
-                                    <li><a href="login.html">Login</a></li> 
+                                    <li><a href="product-details.html">Product Details</a></li>
+                                    <li><a href="checkout.html">Checkout</a></li>
+                                    <li><a href="cart.html">Cart</a></li>
+                                    <li><a href="login.html">Login</a></li>
                                 </ul>
-                            </li> 
+                            </li>
                             <li class="dropdown"><a href="#">Blog<i class="fa fa-angle-down"></i></a>
                                 <ul role="menu" class="sub-menu">
                                     <li><a href="blog.html">Blog List</a></li>
                                     <li><a href="blog-single.html">Blog Single</a></li>
                                 </ul>
-                            </li> 
+                            </li>
                             <li><a href="404.html">404</a></li>
                             <li><a href="contact-us.html">Contact</a></li>
                             --}}

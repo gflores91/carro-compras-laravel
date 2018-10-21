@@ -31,7 +31,7 @@ return [
     ],
 
     'stripe' => [
-        'model' => CCLV\User::class,
+        'model' => CCLV\Models\User::class,
         'key' => env('STRIPE_KEY'),
         'secret' => env('STRIPE_SECRET'),
     ],
